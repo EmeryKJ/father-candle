@@ -5,9 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grill Scented Candle - The Ultimate Dad Gift</title>
   <style>
+    @keyframes flameFlicker {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.05) rotate(-1deg); }
+      100% { transform: scale(1) rotate(1deg); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideInLeft {
+      0% { opacity: 0; transform: translateX(-100px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #fff8f0;
+      background: #fff8f0 url('smoke-background.gif') repeat;
       margin: 0;
       padding: 0;
       color: #333;
@@ -16,25 +32,30 @@
       text-align: center;
       padding: 50px 20px;
       background: #ffe0b3;
+      animation: flameFlicker 2s infinite;
     }
     .hero h1 {
       font-size: 3em;
+      animation: popIn 1s ease-out;
     }
     .hero p {
       font-size: 1.3em;
       margin-top: 10px;
+      animation: slideInLeft 1.5s ease-out;
     }
     .candle-img {
       width: 250px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
       margin-top: 30px;
+      animation: popIn 2s ease-out;
     }
     .features {
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
+      animation: slideInLeft 1.2s ease-out;
     }
     .features h2 {
       text-align: center;
@@ -48,6 +69,7 @@
       background: #fff2cc;
       padding: 30px 20px;
       margin-top: 40px;
+      animation: popIn 1.5s ease-out;
     }
     .dad-jokes h3 {
       text-align: center;
@@ -61,6 +83,7 @@
       background: #fbe9e7;
       padding: 40px 20px;
       margin-top: 40px;
+      animation: slideInLeft 1.3s ease-out;
     }
     .grillfluencers h3 {
       text-align: center;
@@ -79,6 +102,7 @@
     .cta {
       text-align: center;
       margin: 40px 0;
+      animation: popIn 1.2s ease-out;
     }
     .cta button {
       padding: 15px 25px;
@@ -88,9 +112,12 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 153, 51, 0.6);
+      transition: transform 0.2s ease;
     }
     .cta button:hover {
       background: #e67e00;
+      transform: scale(1.1);
     }
   </style>
 </head>
